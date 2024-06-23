@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Empleado</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Editar Empleado</h2>
+        <div th:if="${errorMessage}" class="alert alert-danger" role="alert">
+            <span th:text="${errorMessage}"></span>
+        </div>
+        <form th:action="@{/actualizar_empleado}" th:object="${empleado}" method="post">
+            <div class="form-group">
+                <label for="dni_empleado">DNI:</label>
+                <input type="text" class="form-control" id="dni_empleado" th:field="*{dni_empleado}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="nombre_empleado">Nombre:</label>
+                <input type="text" class="form-control" id="nombre_empleado" th:field="*{nombre_empleado}" placeholder="Ingrese su nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="apellido_empleado">Apellido:</label>
+                <input type="text" class="form-control" id="apellido_empleado" th:field="*{apellido_empleado}" placeholder="Ingrese su apellido" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                <input type="date" class="form-control" id="fecha_nacimiento" th:field="*{fecha_nacimiento}" required>
+            </div>
+            <div class="form-group">
+                <label for="direccion">Dirección:</label>
+                <input type="text" class="form-control" id="direccion" th:field="*{direccion}" placeholder="Ingrese su dirección" required>
+            </div>
+            <div class="form-group">
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" class="form-control" id="correo" th:field="*{correo}" placeholder="Ingrese su correo electrónico" required>
+            </div>
+            <div class="form-group">
+                <label for="areaEntity">Área ID:</label>
+                <input type="text" class="form-control" id="areaEntity" th:field="*{areaEntity.area_id}" placeholder="Ingrese el ID del área" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

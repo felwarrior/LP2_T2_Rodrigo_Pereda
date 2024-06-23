@@ -36,8 +36,8 @@
                     <td th:text="${empleado.correo}"></td>
                     <td th:text="${empleado.areaEntity.area_id}"></td>
                     <td>
-                        <a th:href="@{/detalle_usuario/{id}(id=${empleado.dni_empleado})}" class="btn btn-info">Ver</a> |
-                        <a th:href="@{/editar_usuario/{id}(id=${empleado.dni_empleado})}" class="btn btn-warning">Editar</a>  
+                        <a th:href="@{/detalle_empleado/{id}(id=${empleado.dni_empleado})}" class="btn btn-info">Ver</a> |
+                        <a th:href="@{/editar_empleado/{id}(id=${empleado.dni_empleado})}" class="btn btn-warning">Editar</a>  
                     </td>
                 </tr>
             </tbody>

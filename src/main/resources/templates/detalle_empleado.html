@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Empleado</title>
+    <!-- Estilos de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Detalles del Empleado</h2>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title" th:text="'Nombre: ' + ${empleado.nombre_empleado}">No existe</h5>
+                <p class="card-text" th:text="'Apellido: ' + ${empleado.apellido_empleado}"></p>
+                <p class="card-text" th:text="'DNI: ' + ${empleado.dni_empleado}"></p>
+                <p class="card-text" th:text="'Fecha de Nacimiento: ' + ${empleado.fecha_nacimiento}"></p>
+                <p class="card-text" th:text="'Dirección: ' + ${empleado.direccion}"></p>
+                <p class="card-text" th:text="'Correo electrónico: ' + ${empleado.correo}"></p>
+                <p class="card-text" th:text="'Área: ' + ${empleado.areaEntity.nombre_area}"></p>
+                
+                <a th:href="@{/}" class="btn btn-secondary">Regresar</a>
+                <a th:href="@{/delete/{id}(id=${empleado.dni_empleado})}" class="btn btn-danger">Eliminar</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts de Bootstrap y jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</body>
+</html>
