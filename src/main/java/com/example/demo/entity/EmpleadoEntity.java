@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -34,8 +36,10 @@ public class EmpleadoEntity {
 	@Column(name = "apellido_empleado",nullable = false, length = 45)
 	private String apellido_empleado;
 	
-	@Column(name = "fecha_nacimiento",nullable = false)
-	private LocalDate fecha_nacimiento;
+	 
+	    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+	    @Column(name = "fecha_nacimiento", nullable = false)
+	    private LocalDate fecha_nacimiento;
 	 	
 	@Column(name = "direccion",nullable = false, length = 45)
 	private String direccion;
